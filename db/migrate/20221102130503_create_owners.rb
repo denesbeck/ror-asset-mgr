@@ -1,13 +1,13 @@
-class CreateAssets < ActiveRecord::Migration[5.2]
+class CreateOwners < ActiveRecord::Migration[5.2]
   def change
-    create_table :assets do |t|
+    create_table :owners do |t|
       t.string :name
-      t.string :user_serial
+      t.string :serial
       t.string :email
       t.string :country
       t.string :asset_serial
       t.string :asset_type
-      t.date :expiration_date
+      t.string :expiration_date
 
       t.timestamps
     end

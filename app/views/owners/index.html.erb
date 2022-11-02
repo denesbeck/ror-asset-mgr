@@ -1,11 +1,11 @@
-<h1>Assets for company #001727</h1>
+<h1>Inventory for company #001727</h1>
 <div class='mainContainer'>  
   <div class='tableContainer'>
     <table>
       <thead>
         <tr>
           <th>NAME</th>
-          <th>USER_SERIAL</th>
+          <th>SERIAL</th>
           <th>EMAIL</th>
           <th>COUNTRY</th>
           <th>ASSET_SERIAL</th>
@@ -15,26 +15,26 @@
         </tr>
       </thead>
       <tbody>
-        <% @assets.each do |asset| %>
+        <% @owners.each do |owner| %>
           <tr>
-            <td><%= asset.name %></td>
-            <td><%= asset.user_serial %></td>
-            <td><%= asset.email %></td>
-            <td><%= asset.country %></td>
-            <td><%= asset.asset_serial %></td>
+            <td><%= owner.name %></td>
+            <td><%= owner.serial %></td>
+            <td><%= owner.email %></td>
+            <td><%= owner.country %></td>
+            <td><%= owner.asset_serial %></td>
             <td class='assetType'>
-              <% if asset.asset_type.eql?('Desktop') %>
+              <% if owner.asset_type.eql?('Desktop') %>
                 <i title='Desktop' class="fa-solid fa-computer fa-xl"></i>
               <% end %>
-              <% if asset.asset_type.eql?('Laptop') %>
+              <% if owner.asset_type.eql?('Laptop') %>
                 <i title='Laptop' class="fa-solid fa-laptop fa-xl"></i>
               <% end %>
-              <% if asset.asset_type.eql?('Mac') %>
+              <% if owner.asset_type.eql?('Mac') %>
                 <i title='MacBook' class="fa-brands fa-apple fa-xl"></i>
               <% end %>
             </td>
-            <td><%= asset.expiration_date %></td>
-            <td> <%= render partial: 'buttons', :locals => {:asset => asset} %> </td>
+            <td><%= owner.expiration_date %></td>
+            <td> <%= render partial: 'buttons', :locals => {:owner => owner} %> </td>
           </tr>
         <% end %>
       </tbody>

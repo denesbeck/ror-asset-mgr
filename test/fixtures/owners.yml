@@ -7,7 +7,7 @@ one:
   country: MyString
   asset_serial: MyString
   asset_type: MyString
-  expiration_date: 2022-11-01
+  expiration_date: MyString
 
 two:
   name: MyString
@@ -16,4 +16,4 @@ two:
   country: MyString
   asset_serial: MyString
   asset_type: MyString
-  expiration_date: 2022-11-01
+  expiration_date: MyString
