@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  user_serial: MyString
+  email: MyString
+  country: MyString
+  asset_serial: MyString
+  asset_type: MyString
+  expiration_date: 2022-11-01
+
+two:
+  name: MyString
+  user_serial: MyString
+  email: MyString
+  country: MyString
+  asset_serial: MyString
+  asset_type: MyString
+  expiration_date: 2022-11-01

@@ -1,0 +1,16 @@
+<div class='buttonContainer'>
+  <button> 
+    <i title='Show' class="fa-regular fa-eye fa-xl"></i>
+  </button>              
+  <button>
+    <i title='Update' class="fa-solid fa-pen-to-square fa-xl"></i>
+  </button>
+  <%= button_to asset_path(asset), 
+    method: :delete, 
+    data: {
+      confirm: 'Are you sure?'
+    } do %>
+    <i title='Delete' class="fa-solid fa-trash-can fa-xl"></i>
+  <% end %>
+</div>
+

@@ -1,0 +1,43 @@
+<h1>Assets for company #001727</h1>
+<div class='mainContainer'>  
+  <div class='tableContainer'>
+    <table>
+      <thead>
+        <tr>
+          <th>NAME</th>
+          <th>USER_SERIAL</th>
+          <th>EMAIL</th>
+          <th>COUNTRY</th>
+          <th>ASSET_SERIAL</th>
+          <th>ASSET_TYPE</th>
+          <th>EXPIRATION_DATE</th>
+          <th>ACTIONS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @assets.each do |asset| %>
+          <tr>
+            <td><%= asset.name %></td>
+            <td><%= asset.user_serial %></td>
+            <td><%= asset.email %></td>
+            <td><%= asset.country %></td>
+            <td><%= asset.asset_serial %></td>
+            <td class='assetType'>
+              <% if asset.asset_type.eql?('Desktop') %>
+                <i title='Desktop' class="fa-solid fa-computer fa-xl"></i>
+              <% end %>
+              <% if asset.asset_type.eql?('Laptop') %>
+                <i title='Laptop' class="fa-solid fa-laptop fa-xl"></i>
+              <% end %>
+              <% if asset.asset_type.eql?('Mac') %>
+                <i title='MacBook' class="fa-brands fa-apple fa-xl"></i>
+              <% end %>
+            </td>
+            <td><%= asset.expiration_date %></td>
+            <td> <%= render partial: 'buttons', :locals => {:asset => asset} %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
