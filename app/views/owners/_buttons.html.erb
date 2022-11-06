@@ -1,11 +1,11 @@
-<div class='buttonContainer'>
-  <%= button_to owner_path(owner), method: :get do %>
+<div class='button-container'>
+  <%= button_to owner_path(owner), method: :get, class: 'action-btn' do %>
     <i title='Show' class="fa-regular fa-eye fa-xl"></i>
   <% end %>
-  <%= button_to edit_owner_path(owner), method: :get do %>
+  <%= button_to edit_owner_path(owner), method: :get, class: 'action-btn' do %>
     <i title='Update' class="fa-solid fa-pen-to-square fa-xl"></i>
   <% end %>
-  <%= button_to owner_path(owner), method: :delete, data: {confirm: 'Are you sure?'} do %>
+  <%= button_to owner_path(owner), method: :delete, data: {confirm: 'Are you sure?'}, class: 'action-btn' do %>
     <i title='Delete' class="fa-solid fa-trash-can fa-xl"></i>
   <% end %>
 </div>

@@ -1,6 +1,11 @@
 <h1>Inventory for company #001727</h1>
-<div class='mainContainer'>  
-  <div class='tableContainer'>
+<div class='main-container'>
+  <div class='top-action-bar'>
+    <%= button_to new_owner_path, method: :get, class: 'add-new-btn' do %>
+      <i title='Add new owner' class="fa-solid fa-plus mr-1"></i><span>Add New Owner</span>
+    <% end %>
+  </div>
+  <div class='table-container'>
     <table>
       <thead>
         <tr>
@@ -23,21 +28,13 @@
             <td><%= owner.country %></td>
             <td><%= owner.asset_serial %></td>
             <td class='assetType'>
-              <% if owner.asset_type.eql?('Desktop') %>
-                <i title='Desktop' class="fa-solid fa-computer fa-xl"></i>
-              <% end %>
-              <% if owner.asset_type.eql?('Laptop') %>
-                <i title='Laptop' class="fa-solid fa-laptop fa-xl"></i>
-              <% end %>
-              <% if owner.asset_type.eql?('Mac') %>
-                <i title='MacBook' class="fa-brands fa-apple fa-xl"></i>
-              <% end %>
+              <%= render partial: 'asset-types', :locals => {:asset_type => owner.asset_type} %>
             </td>
             <td><%= owner.expiration_date %></td>
             <td> <%= render partial: 'buttons', :locals => {:owner => owner} %> </td>
           </tr>
         <% end %>
-      </tbody>
+      </tbody>  
     </table>
   </div>
 </div>

@@ -1,1 +1,47 @@
-<h1>show</h1>
+<form class='main-container'>
+  <legend>Owner #<%= @owner.serial %></legend>
+  <div class='show-container'>
+    <div class='kv-container'>
+      <strong>Name:</strong>
+      <div class='value'>
+        <%= @owner.name %>
+      </div>
+    </div>
+     
+    <div class='kv-container'>
+      <strong>Email:</strong>
+      <div class='value'>
+        <%= @owner.email %>
+      </div>  
+    </div>
+
+    <div class='kv-container'>
+      <strong>Country:</strong>
+      <div class='value'>
+        <%= @owner.country %>
+      </div>  
+    </div>
+
+    <div class='kv-container'>
+      <strong>Asset serial:
+        <%= render partial: 'asset-types', :locals => {:asset_type => @owner.asset_type} %>
+      </strong>
+      <div class='value'>
+        <%= @owner.asset_serial %>
+      </div>
+      
+    </div>
+
+    <div class='kv-container'>
+      <strong>Expiration date:</strong>
+      <div class='value'>
+        <%= @owner.expiration_date %>
+      </div>
+    </div>
+    <%= link_to 'Go back', owners_path, class: 'go-back' %>
+    <div class='show-actions button-container'>
+      <%= render partial: 'show-actions', :locals => {:owner => @owner} %>
+    </div>
+  </div>
+</form>
+
