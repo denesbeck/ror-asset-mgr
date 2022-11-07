@@ -7,6 +7,20 @@ class OwnersController < ApplicationController
     @owner = Owner.find(params[:id])
   end
 
+  def new
+    @owner = Owner.new
+  end
+
+  def create
+    @owner = Owner.new(owner_params)
+
+    if @owner.save
+      redirect_to @owner
+    else
+      render 'new'
+    end
+  end
+
   def edit; end
 
   def update; end
@@ -16,5 +30,11 @@ class OwnersController < ApplicationController
     @owner.destroy
 
     redirect_to owners_path
+  end
+
+  private
+
+  def owner_params
+    params_require(:owner).permit(:name, :serial, :email, :country, :asset_serial, :asset_type, :expiration_date)
   end
 end
