@@ -27,14 +27,14 @@
             <td><%= owner.email %></td>
             <td><%= owner.country %></td>
             <td><%= owner.asset_serial %></td>
-            <td class='assetType'>
+            <td>
               <%= render partial: 'asset-types', :locals => {:asset_type => owner.asset_type} %>
             </td>
             <td><%= owner.expiration_date %></td>
             <td> <%= render partial: 'buttons', :locals => {:owner => owner} %> </td>
           </tr>
         <% end %>
-      </tbody>  
+      </tbody>
     </table>
   </div>
 </div>

@@ -1,0 +1,19 @@
+<%= form_with model: owner, class: 'form-container' do |f| %>
+  <legend><%= "#{type} ##{owner.serial}" %></legend>
+  <%= f.label :name, class: 'bold' %><br>
+  <%= f.text_field :name %>
+  <%= f.label :serial, class: 'bold' %><br>
+  <%= f.text_field :serial %>
+  <%= f.label :email, class: 'bold' %><br>
+  <%= f.text_field :email %>
+  <%= f.label :country, class: 'bold' %><br>
+  <%= f.text_field :country %>
+  <%= f.label :asset_serial, class: 'bold' %><br>
+  <%= f.text_field :asset_serial %>
+  <%= f.label :asset_type, class: 'bold' %><br>
+  <%= f.text_field :asset_type %>
+  <%= f.label :expiration_date, class: 'bold' %><br>
+  <%= f.text_field :expiration_date %>
+  <%= f.submit %>
+<%= link_to 'Go back', owners_path, class: 'go-back' %>
+<% end %>

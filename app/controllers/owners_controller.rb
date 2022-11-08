@@ -21,9 +21,19 @@ class OwnersController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @owner = Owner.find(params[:id])
+  end
 
-  def update; end
+  def update
+    @owner = Owner.find(params[:id])
+
+    if @owner.update(owner_params)
+      redirect_to owners_path
+    else
+      render 'edit'
+    end
+  end
 
   def destroy
     @owner = Owner.find(params[:id])
@@ -33,8 +43,7 @@ class OwnersController < ApplicationController
   end
 
   private
-
-  def owner_params
-    params_require(:owner).permit(:name, :serial, :email, :country, :asset_serial, :asset_type, :expiration_date)
-  end
+    def owner_params
+      params.require(:owner).permit(:name, :serial, :email, :country, :asset_serial, :asset_type, :expiration_date)
+    end
 end

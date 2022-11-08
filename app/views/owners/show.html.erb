@@ -1,25 +1,25 @@
-<form class='main-container'>
+<div class='main-container'>
+  <form class='form-container'>
   <legend>Owner #<%= @owner.serial %></legend>
-  <div class='show-container'>
     <div class='kv-container'>
       <strong>Name:</strong>
       <div class='value'>
         <%= @owner.name %>
       </div>
     </div>
-     
+
     <div class='kv-container'>
       <strong>Email:</strong>
       <div class='value'>
         <%= @owner.email %>
-      </div>  
+      </div>
     </div>
 
     <div class='kv-container'>
       <strong>Country:</strong>
       <div class='value'>
         <%= @owner.country %>
-      </div>  
+      </div>
     </div>
 
     <div class='kv-container'>
@@ -29,7 +29,7 @@
       <div class='value'>
         <%= @owner.asset_serial %>
       </div>
-      
+
     </div>
 
     <div class='kv-container'>
@@ -38,10 +38,9 @@
         <%= @owner.expiration_date %>
       </div>
     </div>
-    <%= link_to 'Go back', owners_path, class: 'go-back' %>
+    <%= link_to 'Go back', owners_path, class: 'go-back font-lg' %>
     <div class='show-actions button-container'>
       <%= render partial: 'show-actions', :locals => {:owner => @owner} %>
     </div>
-  </div>
-</form>
-
+  </form>
+</div>
