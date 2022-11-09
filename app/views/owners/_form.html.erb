@@ -14,6 +14,6 @@
   <%= f.text_field :asset_type %>
   <%= f.label :expiration_date, class: 'bold' %><br>
   <%= f.text_field :expiration_date %>
-  <%= f.submit %>
+  <%= f.submit "#{type} Owner", :class => 'primary-button' %>
 <%= link_to 'Go back', owners_path, class: 'go-back' %>
 <% end %>
